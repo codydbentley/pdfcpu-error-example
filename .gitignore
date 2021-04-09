@@ -1,3 +1,11 @@
+# IDEs
+.idea
+.vscode
+
+# Output files
+input.pdf
+output.pdf
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
