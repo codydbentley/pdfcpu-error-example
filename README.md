@@ -1,0 +1,1 @@
+# pdfcpu-error-example
