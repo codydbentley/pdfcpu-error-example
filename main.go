@@ -23,6 +23,9 @@ func main() {
 
 	// merge page1 and page2
 	err := doFileMerge("./input.pdf", "./page1.pdf", "./page2.pdf")
+	if err != nil {
+		log.Fatalf("unable to merge files: %v", err)
+	}
 
 	// open input file to be edited
 	inFile, err := os.Open("./input.pdf")
@@ -38,7 +41,8 @@ func main() {
 	}
 	defer outFile.Close()
 
-	// watermark image generated with Image Magick tool: "convert.exe -size 468x68 canvas:#FFFFFF watermark.png"
+	// watermark image generated with Image Magick tool:
+	// "convert.exe -size 468x68 canvas:#FFFFFF watermark.png"
 
 	// get dimensions of page 1
 	pageDimensions, err := api.PageDims(inFile, nil)
